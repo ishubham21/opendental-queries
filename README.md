@@ -54,6 +54,12 @@ Written against **Open Dental 26.2**. Column names move occasionally between ver
 If a query errors on yours, run `verify.sh` with your version number — it will tell you
 exactly which column is the problem. Open an issue with the error and I'll fix it.
 
+## Notes
+
+- [Why future payment-plan charges are missing from your query](notes/why-future-payplan-charges-are-missing.md)
+  — dynamic plans do not store future charges as rows, which is why `payplancharge` and the
+  API's `getExpected` both come back short.
+
 ## Ask for a report
 
 **[Request one here](../../issues/new?template=query-request.md)** — say what number you
