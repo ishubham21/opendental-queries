@@ -60,10 +60,13 @@ exactly which column is the problem. Open an issue with the error and I'll fix i
 want in plain English and include your Open Dental version. Real questions get real queries
 added to this repo, free. That is how most of the ones above got written.
 
-If it's a big one and you'd rather not wait your turn, I write these to order: $150 for one
-query inside 48 hours, $450 for three. Delivered as a `.sql` file you run yourself, so no
-patient data leaves your office and there's nothing to sign. But ask first — most requests
-turn out to be quick.
+If it's a big one and you'd rather not wait your turn, I write these to order —
+**[$150, tested, inside 48 hours](https://ishubham8.gumroad.com/l/imidn)**, or $450 for
+three. Delivered as a `.sql` file you run yourself, so no patient data leaves your office
+and there's nothing to sign. If it doesn't answer the question you asked, I fix it or
+refund you.
+
+But ask in an issue first — most requests turn out to be quick and free.
 
 ---
 
