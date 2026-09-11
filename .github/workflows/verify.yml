@@ -1,0 +1,8 @@
+name: verify queries
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./verify.sh
