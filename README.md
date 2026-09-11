@@ -27,6 +27,8 @@ No download, no add-on, no remote access, and no patient data leaves your buildi
 | [06 production by dentist including hygiene](queries/06-production-by-dentist-including-hygiene.sql) | Production by dentist, with hygiene billed under their licence rolled in |
 | [07 payment plans aging as of a date](queries/07-payment-plans-aging-as-of-date.sql) | Payment plans with principal, charged, paid and due as of a date |
 | [08 payment plan charges including future](queries/08-payment-plan-charges-including-future.sql) | Why future payment-plan charges are missing from your query, and what to do |
+| [09 recall due, nothing booked](queries/09-recall-due-not-booked.sql) | Patients overdue for recall with no future appointment — the reactivation list |
+| [10 insurance claims outstanding](queries/10-insurance-claims-outstanding.sql) | Claims sent and still unpaid, aged 0-30 / 31-60 / 61-90 / 90+ |
 
 ## Why these ones
 
@@ -52,10 +54,16 @@ Written against **Open Dental 26.2**. Column names move occasionally between ver
 If a query errors on yours, run `verify.sh` with your version number — it will tell you
 exactly which column is the problem. Open an issue with the error and I'll fix it.
 
-## Contributing / requests
+## Ask for a report
 
-Open an issue with the question you're trying to answer and the report you wish existed.
-Include your Open Dental version. Real questions get real queries added here.
+**[Request one here](../../issues/new?template=query-request.md)** — say what number you
+want in plain English and include your Open Dental version. Real questions get real queries
+added to this repo, free. That is how most of the ones above got written.
+
+If it's a big one and you'd rather not wait your turn, I write these to order: $150 for one
+query inside 48 hours, $450 for three. Delivered as a `.sql` file you run yourself, so no
+patient data leaves your office and there's nothing to sign. But ask first — most requests
+turn out to be quick.
 
 ---
 
