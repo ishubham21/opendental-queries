@@ -29,6 +29,12 @@ No download, no add-on, no remote access, and no patient data leaves your buildi
 | [08 payment plan charges including future](queries/08-payment-plan-charges-including-future.sql) | Why future payment-plan charges are missing from your query, and what to do |
 | [09 recall due, nothing booked](queries/09-recall-due-not-booked.sql) | Patients overdue for recall with no future appointment — the reactivation list |
 | [10 insurance claims outstanding](queries/10-insurance-claims-outstanding.sql) | Claims sent and still unpaid, aged 0-30 / 31-60 / 61-90 / 90+ |
+| [11 A/R aging by patient](queries/11-accounts-receivable-aging-by-patient.sql) | Accounts receivable by guarantor in 0-30 / 31-60 / 61-90 / 90+ buckets |
+| [12 collections by day and provider](queries/12-collections-by-day-and-provider.sql) | What you were actually paid, by day and provider, with prepayments kept separate |
+| [13 broken appointments, repeat offenders](queries/13-broken-appointments-repeat-offenders.sql) | Who keeps breaking appointments, and how many chair hours it cost |
+| [14 case acceptance by provider](queries/14-treatment-plan-acceptance-by-provider.sql) | Of what each provider diagnosed, how much got done — measured in dollars |
+| [15 active patients not seen in 18 months](queries/15-active-patients-not-seen-in-18-months.sql) | Patients who fell off entirely, including those with no recall row to go overdue |
+| [16 unused insurance benefits this year](queries/16-unused-insurance-benefits-this-year.sql) | Who still has annual maximum left before the plan year closes — the Q4 call list |
 
 ## Why these ones
 
