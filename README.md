@@ -62,6 +62,10 @@ exactly which column is the problem. Open an issue with the error and I'll fix i
 
 ## Notes
 
+- [Can you do this for ClearDent / Tracker / Dentrix / Eaglesoft?](notes/other-practice-management-systems.md)
+  — no other system publishes its schema, so here is the one read-only query that makes
+  your database describe itself, and a standing offer to write the first query free for
+  any system somebody sends a structure dump for.
 - [Why future payment-plan charges are missing from your query](notes/why-future-payplan-charges-are-missing.md)
   — dynamic plans do not store future charges as rows, which is why `payplancharge` and the
   API's `getExpected` both come back short.
