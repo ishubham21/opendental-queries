@@ -86,6 +86,9 @@ exactly which column is the problem. Open an issue with the error and I'll fix i
 
 ## Notes
 
+- [Why your associate's production number does not match Open Dental's report](notes/associate-production-does-not-match-open-dental.md)
+  — hygiene billed under a licence, deleted procedures that are still in the table,
+  production versus collections, and which date the work counts on.
 - [Can you do this for ClearDent / Tracker / Dentrix / Eaglesoft?](notes/other-practice-management-systems.md)
   — no other system publishes its schema, so here is the one read-only query that makes
   your database describe itself, and a standing offer to write the first query free for
