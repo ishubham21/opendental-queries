@@ -54,6 +54,16 @@ OD_VERSION=25-1 ./verify.sh   # check against a different Open Dental version
 It downloads Open Dental's published documentation XML, builds a structure-only database
 from it (430 tables, no data), runs every query, and fails on any error.
 
+For a system that does **not** publish a schema — ClearDent, Tracker, Dentrix, Eaglesoft —
+[`schema-replica.sh`](schema-replica.sh) does the same job from an `INFORMATION_SCHEMA`
+dump of your own database, which contains structure only and no patient data:
+
+```bash
+./schema-replica.sh your-dump.csv queries/
+```
+
+See [the note on other practice-management systems](notes/other-practice-management-systems.md).
+
 ## Version differences
 
 Written against **Open Dental 26.2**. Column names move occasionally between versions.

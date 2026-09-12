@@ -53,7 +53,19 @@ ORDER BY table_name, column_id;
 Export the result as CSV. That file is better than a published schema, because it is *your*
 version rather than a document that may lag it.
 
-## What I do with it
+## What I do with it — and you can run it yourself
+
+[`schema-replica.sh`](../schema-replica.sh) in this repository takes that CSV, maps the
+SQL Server and Oracle type spellings MariaDB will not accept, builds the replica in Docker,
+and runs every `.sql` in a directory against it:
+
+```bash
+./schema-replica.sh your-dump.csv queries/
+```
+
+A query referencing a column your database does not have fails there with
+`Unknown column`, instead of failing in front of you. It is the same harness `verify.sh`
+uses for Open Dental, with the schema coming from your dump instead of a vendor XML.
 
 Build a structure-only replica — the same thing `verify.sh` does for Open Dental, except
 the schema comes from your dump instead of a vendor XML — and then a query can be proven to
