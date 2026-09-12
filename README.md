@@ -15,6 +15,20 @@ ships**. Not "should work" — run, by [`verify.sh`](verify.sh), on every push.
 
 No download, no add-on, no remote access, and no patient data leaves your building.
 
+## The one that isn't here
+
+Most of these exist because somebody asked. If the number you want is not below, say what
+it is in plain English — you do not have to phrase it like a database question — and
+include your Open Dental version from **Help > About**:
+
+**[Ask for a query](../../issues/new?template=query-request.md)** — free, and it gets added
+here so the next person does not have to ask.
+
+Real questions I have written for so far: production by dentist with hygiene billed under
+their licence rolled in, payment plans aged to a date in the past, insurance benefits still
+unspent before the plan year closes. Nothing exotic; they were just numbers Open Dental's
+standard reports would not give in that shape.
+
 ## The queries
 
 | File | Answers |
