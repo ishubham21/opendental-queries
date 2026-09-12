@@ -86,6 +86,9 @@ exactly which column is the problem. Open an issue with the error and I'll fix i
 
 ## Notes
 
+- [The Open Dental status codes that silently break a report](notes/status-codes-that-break-reports.md)
+  — `ProcStatus`, `AptStatus` and `PatStatus` decoded, what each wrong value does to a
+  number, and the query that confirms the mapping against your own database.
 - [Why your associate's production number does not match Open Dental's report](notes/associate-production-does-not-match-open-dental.md)
   — hygiene billed under a licence, deleted procedures that are still in the table,
   production versus collections, and which date the work counts on.
