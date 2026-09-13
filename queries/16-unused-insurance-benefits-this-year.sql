@@ -7,7 +7,7 @@
 -- `BenefitType` means "Limitations" is not something I will guess on your behalf. So this
 -- query does NOT hard-code it. It takes the largest monetary benefit attached to the plan
 -- with no coverage category (CovCatNum = 0), which on every plan I have seen is the annual
--- maximum — and it prints `annual_max_benefit_type` so you can confirm it in one glance.
+-- maximum, and it prints `annual_max_benefit_type` so you can confirm it in one glance.
 --
 -- To pin it for your database, run this once and look at which BenefitType your annual
 -- maximums use, then add `AND b.BenefitType = <that value>` to the subquery below:
@@ -20,7 +20,7 @@
 -- `insurance_paid_ytd` needs no such caveat: it is money actually received, summed from
 -- claimproc.InsPayAmt, which is true regardless of any status enum.
 -- Assumption: a calendar plan year. If the plan renews mid-year (insplan.MonthRenew > 0)
---   the YTD window below is wrong for it — that is why MonthRenew is in the output.
+--   the YTD window below is wrong for it, which is why MonthRenew is in the output.
 -- Read-only. Run in Reports > User Query.
 
 SELECT

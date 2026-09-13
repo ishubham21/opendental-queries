@@ -7,8 +7,8 @@ difference between Open Dental and everything else.
 
 Open Dental does two things almost no other practice-management system does:
 
-1. It **publishes its complete database schema** — every table, every column, for every
-   version — as a public XML file.
+1. It **publishes its complete database schema**, every table and column for every
+   version, as a public XML file.
 2. It ships **Reports > User Query**, a window that runs read-only SQL against your own
    server.
 
@@ -22,7 +22,7 @@ finding out the guess was wrong. So I don't.
 ## What actually works instead
 
 Every one of these systems sits on a SQL database that can describe itself. One query
-returns the shape of the database and **no data at all** — no patient names, no clinical
+returns the shape of the database and **no data at all**. No patient names, no clinical
 information, no financials. Just table names, column names and types.
 
 **SQL Server** (Dentrix, Eaglesoft, ClearDent on-premise and most Windows-based systems):
@@ -53,7 +53,7 @@ ORDER BY table_name, column_id;
 Export the result as CSV. That file is better than a published schema, because it is *your*
 version rather than a document that may lag it.
 
-## What I do with it — and you can run it yourself
+## What I do with it, and how to run it yourself
 
 [`schema-replica.sh`](../schema-replica.sh) in this repository takes that CSV, maps the
 SQL Server and Oracle type spellings MariaDB will not accept, builds the replica in Docker,
@@ -67,8 +67,8 @@ A query referencing a column your database does not have fails there with
 `Unknown column`, instead of failing in front of you. It is the same harness `verify.sh`
 uses for Open Dental, with the schema coming from your dump instead of a vendor XML.
 
-Build a structure-only replica — the same thing `verify.sh` does for Open Dental, except
-the schema comes from your dump instead of a vendor XML — and then a query can be proven to
+Build a structure-only replica, the same thing `verify.sh` does for Open Dental, except
+the schema comes from your dump instead of a vendor XML. A query can then be proven to
 run before anyone pastes it into a live system. A column that does not exist fails on my
 machine rather than on yours.
 
@@ -78,7 +78,7 @@ The parts that take actual work, and that a guess always gets wrong:
   `ProcStatus = 6`. Forget to exclude it and every production and treatment-planned figure
   comes back inflated. Every system has an equivalent, and every system hides it somewhere
   different.
-- **How a procedure is linked to an appointment** — directly, through a junction table, or
+- **How a procedure is linked to an appointment**: directly, through a junction table, or
   not at all until it is completed.
 - **Which status codes mean "on the books"** as opposed to broken, cancelled or on an
   unscheduled list.
@@ -87,7 +87,7 @@ The parts that take actual work, and that a guess always gets wrong:
 
 - Check whether your agreement with the vendor says anything about direct database access.
 - If you are on a **hosted** product rather than on-premise, you probably cannot reach the
-  database at all, and this is a dead end — ask the vendor for a reporting export instead.
+  database at all, and this is a dead end, so ask the vendor for a reporting export instead.
 - Ask your vendor rep for a **read-only** login rather than going around them. It is a
   normal request and it is the clean way to do it.
 

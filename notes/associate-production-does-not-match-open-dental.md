@@ -14,7 +14,7 @@ this faithfully: `procedurelog.ProvNum` is who it was billed under.
 
 So a report grouped by `ProvNum` credits the dentist with the hygienist's fluoride, x-rays
 and prophy. If the associate's contract says "my production", the two of you probably do
-not mean the same thing by it, and neither of you is wrong — the contract is ambiguous.
+not mean the same thing by it, and neither of you is wrong. The contract is ambiguous.
 
 The fix is not to pick a side. It is to show both, and then have the conversation:
 
@@ -51,8 +51,8 @@ Treatment-planned (`1`) is a different report and a different conversation.
 ## 3. Production is not collections
 
 `procedurelog.ProcFee` is what was charged. It is not what was collected, and it is not net
-of writeoffs. A PPO writeoff can be 30–40% of the fee and it never appears in a production
-report — which is why a practice can hit its production goal and still be short on cash.
+of writeoffs. A PPO writeoff can be 30 to 40% of the fee and it never appears in a production
+report, which is why a practice can hit its production goal and still be short on cash.
 
 If the contract pays on **collections**, production is the wrong table entirely; the figure
 lives in `paysplit`, not `procedurelog`. Those are different numbers with different

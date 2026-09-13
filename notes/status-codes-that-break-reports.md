@@ -2,7 +2,7 @@
 
 Almost every wrong number in a hand-written Open Dental query comes from one of three
 columns. They are plain integers, the UI never shows them, and nothing errors when you get
-one wrong — the report simply returns a different question's answer.
+one wrong. The report simply returns a different question's answer.
 
 ## Where these values come from, and how far to trust them
 
@@ -22,7 +22,7 @@ FROM procedurelog GROUP BY ProcStatus ORDER BY ProcStatus;
 Run the equivalent for `appointment.AptStatus` and `patient.PatStatus`. Then compare the
 counts against what the matching Open Dental report shows for the same window. If the
 buckets line up, the mapping holds for your version. If they do not, trust your database
-over this page and tell me — I will correct it.
+over this page and tell me, and I will correct it.
 
 ## `procedurelog.ProcStatus`
 
@@ -39,7 +39,7 @@ over this page and tell me — I will correct it.
 
 **Status 6 is the expensive one.** A deleted procedure does not leave the table. Its
 `ProcFee` sits there intact, and any production or unscheduled-treatment query that does
-not filter on status counts work that was cancelled — sometimes months of it. This is the
+not filter on status counts work that was cancelled, sometimes months of it. This is the
 single most common reason a hand-written production number comes back too high.
 
 Statuses 3, 4 and 7 catch people out in the other direction: they are charting records, not
@@ -51,7 +51,7 @@ work you did, so a query that counts "everything except deleted" over-reports to
 |---|---|---|
 | 1 | Scheduled | on the books |
 | 2 | Complete | the patient came |
-| 3 | UnschedList | on the unscheduled list — **not booked** |
+| 3 | UnschedList | on the unscheduled list, **not booked** |
 | 4 | ASAP | on the books, flagged to move earlier |
 | 5 | **Broken** | still a row in `appointment` |
 | 6 | Planned | a planned appointment template, not a booking |
@@ -64,7 +64,7 @@ still rows, and excluding them is usually the entire point of the report.
 
 ## `patient.PatStatus`
 
-`0` is an active patient. Everything else — inactive, archived, deceased, prospective —
+`0` is an active patient. Everything else, meaning inactive, archived, deceased or prospective,
 should normally be excluded from a recall, reactivation or A/R list. Sending a reactivation
 postcard to a deceased patient is the sort of mistake that gets remembered.
 
@@ -84,7 +84,7 @@ It is nearly always one of those two.
 
 ## Related
 
-- [Nineteen free, tested Open Dental queries](../README.md) — every one states its
+- [Nineteen free, tested Open Dental queries](../README.md). Every one states its
   assumption in the file header
 - [Why your associate's production number does not match Open Dental's report](associate-production-does-not-match-open-dental.md)
 - [Can you do this for ClearDent / Tracker / Dentrix / Eaglesoft?](other-practice-management-systems.md)
