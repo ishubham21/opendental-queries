@@ -84,7 +84,7 @@ It is nearly always one of those two.
 
 ## Related
 
-- [Nineteen free, tested Open Dental queries](../README.md). Every one states its
+- [Twenty-two free, tested Open Dental queries](../README.md). Every one states its
   assumption in the file header
 - [Why your associate's production number does not match Open Dental's report](associate-production-does-not-match-open-dental.md)
 - [Can you do this for ClearDent / Tracker / Dentrix / Eaglesoft?](other-practice-management-systems.md)

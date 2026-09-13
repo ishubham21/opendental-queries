@@ -95,6 +95,6 @@ The parts that take actual work, and that a guess always gets wrong:
 
 **The first practice on each system that sends me a structure dump gets one query written
 for that system free, and I publish it here so nobody else has to ask.** Open Dental has
-nineteen; every other system has zero, and that is a silly place for this to stop.
+twenty-two; every other system has zero, and that is a silly place for this to stop.
 
 Open an issue, or email ishubham2101@gmail.com.

@@ -79,7 +79,7 @@ problem.
 
 ## Related
 
-- [Nineteen free, tested Open Dental queries](../README.md)
+- [Twenty-two free, tested Open Dental queries](../README.md)
 - [Why future payment-plan charges are missing from your query](why-future-payplan-charges-are-missing.md)
 - [Can you do this for ClearDent / Tracker / Dentrix / Eaglesoft?](other-practice-management-systems.md)
 

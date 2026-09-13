@@ -52,6 +52,9 @@ standard reports would not give in that shape.
 | [17 hours worked by employee and day](queries/17-hours-worked-by-employee-and-day.sql) | The timecard as a table: clocked, overtime, adjustments and paid hours per person per day |
 | [18 patients by insurance carrier](queries/18-patients-by-insurance-carrier.sql) | Everyone currently covered by one carrier, with plan, group and subscriber |
 | [19 same-day treatment completed](queries/19-same-day-treatment-completed.sql) | Work diagnosed and completed in the same visit, by provider, the same-day-dentistry number |
+| [20 insurance writeoffs by carrier](queries/20-insurance-writeoffs-by-carrier.sql) | What each carrier writes off, which is the number every production report leaves out |
+| [21 payments by type](queries/21-payments-by-type.sql) | Payments split by type with the names resolved, not left as integers |
+| [22 audit trail export](queries/22-audit-trail-export.sql) | The whole audit trail for a date range, with usernames resolved |
 
 ## Why these ones
 
