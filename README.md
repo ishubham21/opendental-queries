@@ -130,9 +130,9 @@ exactly which column is the problem. Open an issue with the error and I'll fix i
 ## Notes
 
 - [Getting User Query results into Excel without the rows breaking](notes/getting-query-results-into-excel.md).
-  A newline inside a note field ends the export line early and shifts every column after it.
-  Four forum threads with the same cause, and the fix belongs in your SQL rather than in
-  Open Dental.
+  Two opposite faults that look identical: a note whose newlines survive and break the row
+  apart, and a note whose newlines are stripped when you wanted to keep them. Both have a
+  fix, and both belong in your SQL rather than in Open Dental.
 - [The Open Dental status codes that silently break a report](notes/status-codes-that-break-reports.md).
   `ProcStatus`, `AptStatus` and `PatStatus` decoded, what each wrong value does to a
   number, and the query that confirms the mapping against your own database.

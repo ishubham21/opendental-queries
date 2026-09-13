@@ -1,14 +1,36 @@
 # Getting User Query results into Excel without the rows breaking
 
-Four separate threads on the Open Dental forum are the same complaint wearing different
-clothes: `t=8573` (new lines in the User Query export to XLS), `t=7715` (columns
-overlapping in query reports), `t=8118` (Excel refreshable reports), `t=7438` (query
-automation). None of them has an answer.
+Four unanswered threads on the Open Dental forum touch this: `t=8573` (line breaks lost in
+the User Query export to XLS), `t=7715` (columns overlapping in query reports), `t=8118`
+(Excel refreshable reports), `t=7438` (query automation).
 
-The first two have the same cause and the same fix, and it is in your SQL rather than in
-Open Dental.
+The first two look like the same complaint and are **opposite** problems, which is worth
+saying because I got it wrong on the first pass. `t=7715` is a note whose newlines survive
+into the export and break the row apart. `t=8573` is a note whose newlines are stripped and
+the poster wants them kept. Both come from the same place: a line-delimited export has no
+way to carry a newline inside a field, so it either breaks or it flattens.
 
-## Why rows break apart in the export
+## If the line breaks are being stripped and you want them back (t=8573)
+
+The export writes one line per row, so a newline inside a note would end the row early.
+Rather than produce a broken file, the export removes them, and the note arrives in Excel as
+one run-on paragraph.
+
+You cannot make the export carry them. What you can do is carry a marker through and turn it
+back into a real line break in Excel, which takes about ten seconds:
+
+```sql
+REPLACE(REPLACE(REPLACE(pl.ClaimNote, '\r\n', '~~'), '\n', '~~'), '\r', '~~') AS note
+```
+
+Then in Excel, select the note column and open Find & Replace. Find `~~`. In the Replace
+field press **Ctrl+J**, which inserts a line break character and will look like an empty
+box. Replace All, then turn on Wrap Text for the column.
+
+Pick a marker that cannot occur in your notes. `~~` is usually safe; `|` is not, people use
+it in notes more than you would think.
+
+## Why rows break apart in the export (t=7715)
 
 A `Note` column contains newlines. `procedurelog.ClaimNote`, `commlog.Note`,
 `patient.AddrNote`, `appointment.Note` and `insplan.PlanNote` all routinely hold text
