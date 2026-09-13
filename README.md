@@ -58,6 +58,9 @@ standard reports would not give in that shape.
 | [23 fee schedule export](queries/23-fee-schedule-export.sql) | One fee schedule as a table, for comparing a PPO offer against your own |
 | [24 commlog keyword search](queries/24-commlog-keyword-search.sql) | Search every communication note for a phrase, across all patients at once |
 | [25 collections waterfall](queries/25-collections-waterfall.sql) | How much of each month's production has been collected since, and how long it took |
+| [26 patients on a discount plan](queries/26-patients-on-a-discount-plan.sql) | Who is on which discount plan, read from the subscription table and cross-checked against the legacy field |
+| [27 active patients by first visit date](queries/27-active-patients-by-first-visit-date.sql) | Active patients whose first visit predates a date, with the DateFirstVisit field checked against the real procedure history |
+| [28 procedure codes assigned to providers](queries/28-procedure-codes-assigned-to-providers.sql) | Every code with a default provider override, and which ones point at someone who has left |
 
 ## Why these ones
 
@@ -95,6 +98,10 @@ exactly which column is the problem. Open an issue with the error and I'll fix i
 
 ## Notes
 
+- [Getting User Query results into Excel without the rows breaking](notes/getting-query-results-into-excel.md).
+  A newline inside a note field ends the export line early and shifts every column after it.
+  Four forum threads with the same cause, and the fix belongs in your SQL rather than in
+  Open Dental.
 - [The Open Dental status codes that silently break a report](notes/status-codes-that-break-reports.md).
   `ProcStatus`, `AptStatus` and `PatStatus` decoded, what each wrong value does to a
   number, and the query that confirms the mapping against your own database.
