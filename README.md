@@ -55,6 +55,9 @@ standard reports would not give in that shape.
 | [20 insurance writeoffs by carrier](queries/20-insurance-writeoffs-by-carrier.sql) | What each carrier writes off, which is the number every production report leaves out |
 | [21 payments by type](queries/21-payments-by-type.sql) | Payments split by type with the names resolved, not left as integers |
 | [22 audit trail export](queries/22-audit-trail-export.sql) | The whole audit trail for a date range, with usernames resolved |
+| [23 fee schedule export](queries/23-fee-schedule-export.sql) | One fee schedule as a table, for comparing a PPO offer against your own |
+| [24 commlog keyword search](queries/24-commlog-keyword-search.sql) | Search every communication note for a phrase, across all patients at once |
+| [25 collections waterfall](queries/25-collections-waterfall.sql) | How much of each month's production has been collected since, and how long it took |
 
 ## Why these ones
 
