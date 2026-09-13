@@ -91,6 +91,7 @@ standard reports would not give in that shape.
 | [26 patients on a discount plan](queries/26-patients-on-a-discount-plan.sql) | Who is on which discount plan, read from the subscription table and cross-checked against the legacy field |
 | [27 active patients by first visit date](queries/27-active-patients-by-first-visit-date.sql) | Active patients whose first visit predates a date, with the DateFirstVisit field checked against the real procedure history |
 | [28 procedure codes assigned to providers](queries/28-procedure-codes-assigned-to-providers.sql) | Every code with a default provider override, and which ones point at someone who has left |
+| [29 discount plan profitability](queries/29-discount-plan-profitability.sql) | Production, plan writeoffs, adjustments and payments for discount plan patients over a date range. The one on this list with no official equivalent |
 
 ## Why these ones
 
