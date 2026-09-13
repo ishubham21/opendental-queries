@@ -92,6 +92,7 @@ standard reports would not give in that shape.
 | [27 active patients by first visit date](queries/27-active-patients-by-first-visit-date.sql) | Active patients whose first visit predates a date, with the DateFirstVisit field checked against the real procedure history |
 | [28 procedure codes assigned to providers](queries/28-procedure-codes-assigned-to-providers.sql) | Every code with a default provider override, and which ones point at someone who has left |
 | [29 discount plan profitability](queries/29-discount-plan-profitability.sql) | Production, plan writeoffs, adjustments and payments for discount plan patients over a date range. The one on this list with no official equivalent |
+| [30 call list by carrier and code range](queries/30-recall-list-by-carrier-and-code-range.sql) | Patients on one carrier with planned work in a code range, with last visit, next visit, provider, the plan in priority order and their preferred call times |
 
 ## Why these ones
 
