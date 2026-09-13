@@ -24,6 +24,11 @@ include your Open Dental version from **Help > About**:
 **[Ask for a query](../../issues/new?template=query-request.md)** is free, and it gets added
 here so the next person does not have to ask.
 
+If you do not have a GitHub account and do not want one, email **ishubham2101@gmail.com**
+instead. Same thing, no signup. Four days of this repository being public have produced
+eight visitors and zero issues, which I suspect says more about asking a dentist to open a
+GitHub account than it does about whether anybody wants the queries.
+
 Real questions I have written for so far: production by dentist with hygiene billed under
 their licence rolled in, payment plans aged to a date in the past, insurance benefits still
 unspent before the plan year closes. Nothing exotic; they were just numbers Open Dental's

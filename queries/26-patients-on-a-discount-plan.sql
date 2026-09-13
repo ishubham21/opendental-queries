@@ -7,11 +7,12 @@
 --   enough to span the change.
 -- This reads the subscription table, which is authoritative on 21.1 and later, and reports
 --   the legacy field alongside so you can see any patient where the two disagree.
--- Assumption: a subscription with DateTerm of 0000-00-00 or NULL has not been terminated.
---   Open Dental stores "no date" as the zero date rather than NULL in most date columns, and
---   0000-00-00 compares as smaller than every real date, so a plain `DateTerm >= CURDATE()`
---   silently drops every patient whose plan has no end date. YEAR(x) < 1880 is the test used
---   throughout this file for "this date was never set".
+-- Assumption: a subscription with no termination date has not been terminated. Open Dental
+--   writes "no date" as the sentinel 0001-01-01, not as NULL, and a database converted from an
+--   older system can also hold MySQL's own zero date 0000-00-00. Either one compares as smaller
+--   than every real date, so a plain `DateTerm >= CURDATE()` silently drops every patient whose
+--   plan has no end date. YEAR(x) < 1880 is the test used here because it catches both sentinels;
+--   query 18 tests for 0001-01-01 directly, which is fine on a database that was never converted.
 -- Read-only. Run in Reports > User Query.
 
 SELECT
