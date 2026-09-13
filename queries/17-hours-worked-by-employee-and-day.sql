@@ -1,6 +1,10 @@
 -- Hours worked per employee per day, from the time clock. Asked three separate times on
 -- the Open Dental forum (t=8547 "How can i see what days I worked?", t=8311 "Export hours
--- worked each day", t=8117 "Timecard total monthly report") and never answered with SQL.
+-- worked each day", t=8117 "Timecard total monthly report").
+-- Open Dental's own library also has this: #1210, #1830 and #1834 cover weekly hours, the
+--   daily clock report and the time card log. Use theirs if it fits. The reason this one
+--   exists is the TimeDisplayed versus TimeEntered distinction below, which is what decides
+--   whether the number you get is the one payroll runs from.
 -- Assumption: TimeDisplayed1/2 are the clock-in and clock-out as shown on the timecard.
 --   they are the adjusted values, which is what payroll is actually run from. TimeEntered1/2
 --   are the raw punches, so use those instead if you are auditing rather than paying.

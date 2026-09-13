@@ -1,10 +1,35 @@
 # Open Dental report queries
 
-Read-only SQL for [Open Dental](https://www.opendental.com/), written to answer questions
-that practices have actually asked in public and that were never answered.
+Read-only SQL for [Open Dental](https://www.opendental.com/), written from questions
+practices have actually asked in public.
 
 Every query in this repository is **executed against Open Dental's real schema before it
 ships**. Not "should work". Run, by [`verify.sh`](verify.sh), on every push.
+
+## Read this before you read the rest
+
+Open Dental publishes its own
+[Query Examples library](https://opendentalsoft.com:1943/ODQueryList/QueryList.aspx),
+which is free, public, and holds over a thousand queries. It is a bigger library than this
+one and you should look there too. **This README said these answered questions that "were
+never answered", and that was wrong**: several here have an official equivalent, including
+the discount plan list, procedure codes with a default provider, patients with remaining
+benefits, and time clock hours. I had not checked before writing that, and checking took
+ten minutes.
+
+What is actually different here, and it is worth something:
+
+- **Every query is run against the schema before it ships**, by CI, on every push. The
+  official library's own page says "There may be additional changes needed to return the
+  results you want" and sorts by age because older ones may no longer run.
+- **Each one states the assumption that makes it wrong.** A deleted procedure still sits in
+  `procedurelog` with `ProcStatus` 6, a never-terminated date is `0001-01-01` rather than
+  NULL, hygiene billed under a licence lands on the wrong provider. That is the part that
+  quietly breaks a number, and bare SQL does not tell you about it.
+- **These are written against 26.2**, the current version.
+
+If a query here and a query there both answer your question, use theirs. It is free too and
+it has been in use longer.
 
 ## How to use one
 
